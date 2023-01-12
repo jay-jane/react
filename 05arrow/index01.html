@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // var a = function() {
+        //     console.log("a 함수");
+        // }
+        let a = () => {
+            console.log("a 함수");
+        }
+
+        a(); //함수 위에서 호출(Hoisting) 불가
+
+        /*
+        코드가 한 줄이면 {} 생략 가능
+        {}를 생략하면 자동으로 return이 붙는다
+        */
+        let b1 = () => console.log("b 함수"); //한 줄 코드는 중괄호, return 생략 가능
+        b1();
+
+        let b2 = (a, b, c) => a + b + c; //a, b, c를 매개 변수로 받아서 모두 더한 값을 리턴
+        console.log(b2(1, 2, 3));
+
+        let b3 = (a = 10) => a + 100;
+        console.log(b3()); //110
+        console.log(b3(20)); //120
+
+        /*
+        매개변수가 하나일 때 () 생략 가능
+        */
+        let c1 = a => a + 10;
+        console.log(c1(10));
+
+        /*
+        객체를 반환할 때에는 ()로 묶어줌
+        */
+       let c2 = () => {
+        return {key: 1, age: 20}
+       };
+       let c3 = () => ({key: 1, age: 20});
+       console.log(c3);
+
+       //
+    //    setInterval(function() {
+    //     console.log(1);
+    //    }, 1000);
+       setInterval(() => console.log(1), 1000);
+    </script>
+</body>
+</html>

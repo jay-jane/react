@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [1, 2, 3, 4];
+        // let a = arr[0];
+        // let b = arr[1];
+
+        let [a, b, c, d] = arr;
+        console.log(a, b, c, d);
+        let [a1, a2] = arr;
+        console.log(a1, a2);
+        let [x1, , , x4] = arr;
+        console.log(x1, x4);
+        let [y1, ...y2] = arr;
+        console.log(y1, y2);
+        let [...ar] = arr;
+        console.log(ar);
+
+        function useState() {
+            return [999, function() {}];
+        }
+        let [r1, r2] = useState();
+        console.log(r1, r2);
+    </script>
+</body>
+</html>

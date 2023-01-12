@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //배열은 [], 객체는 {}
+
+        //JSON 형식에서의 distructuring
+        let list = [
+            {num: 1, title: "hi", info: [1, 2, 3], profile: {birth: "2023"}},
+            {num: 2, title: "bye", info: [4, 5, 6], profile: {birth: "2022"}}
+        ];
+
+        let [a, b] = list;
+        console.log(a);
+        console.log(b);
+
+        //두 번째 객체의 num, title 키 가져오기
+        let [, {num, title}] = list; //첫 번째 객체는 빈 칸, 가져올 두 번째 객체의 값 입력
+        console.log(num, title);
+        //두 번째 객체의 info
+        let [, {info}] = list;
+
+        //첫 번째 객체의 profile
+        let[{profile}] = list;
+        console.log(profile);
+
+        //두 번째 객체의 info를 다른 이름으로 가져오기
+        let [, {info: x}] = list;
+        console.log(x);
+
+        //두 번째 객체의 info배열의 첫 번째 요소만 가져오기
+        let [, {info: [y]}] = list; //list의 두 번째 객체의 info의 첫 번째 값
+        console.log(y);
+
+        let [, z, ] = x; // 5
+        console.log(z);
+
+        //두 번째 객체의 profile의 birth값 가져오기
+        let [, {profile: {birth: bbbb}}] = list;
+        console.log(bbbb);
+
+
+    </script>
+</body>
+</html>
