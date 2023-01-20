@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="module">
+        //이 예제에서 module을 사용하려면 type을 반드시 적어야 함
+        import {name, age, info, addr, myInfo} from './index01.js';
+
+        console.log(name);
+        console.log(age);
+        info();
+        console.log(addr);
+        myInfo();
+
+        console.log("---------------------------");
+        //import - 앨리어스 방식
+        import * as test from './index01.js';
+        console.log(test.name);
+        test.info();
+        test.myInfo();
+        
+        console.log("---------------------------");
+        //import - 이름 붙여 가져오기
+        import {name as n, age as a} from './index01.js';
+        console.log(n);
+        console.log(a);
+        </script>
+</body>
+</html>

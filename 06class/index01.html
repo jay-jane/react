@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Person {
+            //필드
+            name = "이이이";
+            age = 20;
+            state = {a: 1};
+
+            //js에서 생성자는 반드시 하나
+            //js에서 this키워드를 지칭하면 필드가 됨
+            constructor(addr) {
+                this.addr = addr;
+            }
+
+            //함수
+            func = () => {
+                console.log("func 실행");
+            }
+        }
+
+        //객체로 생성
+        let p = new Person();
+        console.log(p.name); //필드 접근
+        console.log(p.age);
+        console.log(p.state.a);
+
+        p.func();
+
+        let p2 = new Person("서울");
+        console.log(p2.addr);
+    </script>
+</body>
+</html>

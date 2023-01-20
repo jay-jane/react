@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Shape {
+            constructor() {
+            }
+
+            func = () => {
+                console.log("func 호출");
+            }
+        }
+
+        class Rect extends Shape {
+            //생성자를 직접 만들게 되면 super()를 통해 연결해야 함
+            constructor(w, h) {
+                super(); //super클래스의 생성자 연결
+                this.w = w; //필드에 w 저장 - this 키워드 사용 시 자동으로 필드 생성
+                this.h = h;
+            }
+
+            //setter
+            setW = w => {
+                this.w = w;
+            }
+
+            //getter
+            getW = () => {
+                return this.w;
+            }
+
+            //set, get, static같은 키워드로 함수를 설정할 수 있음
+        }
+
+        //객체 생성
+        let rect = new Rect();
+        rect.func(); //상속한 함수
+
+        let rect2 = new Rect(10, 20);
+        console.log(rect2.w); //필드값 접근
+        console.log(rect2.h);
+
+        rect.setW(30);
+        console.log(rect.getW());
+    </script>
+</body>
+
+</html>
