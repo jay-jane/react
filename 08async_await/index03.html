@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function myFetch(url) {
+        //     return new Promise(function(success, fail) {
+        //         success("성공");
+        //     });
+        // }
+        // myFetch("http://~")
+        // .then((response) => response)
+        // .then(data => data)
+        // .then(data => console.log(data));
+
+        //async (비동기) - function 앞에 선언하면 return값을 자동으로 Promise로 변형해줌
+        async function myFetch(url) {
+            return "데이터";
+        }
+
+        // myFetch("http://~")
+        // .then(response => console.log(response));
+
+        //await - return이 Promise이면 await을 적용할 수 있고 await을 적용하면 then 생략 가능
+        //          (단, async 함수 안에서만 사용 가능)
+        (async () => { //즉시실행함수
+            let result = await myFetch("http://~");
+            console.log(result);
+        })();
+        
+    </script>
+</body>
+</html>
